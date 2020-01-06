@@ -1,0 +1,96 @@
+{namespace si=TeamDigital\Sitepackage\ViewHelpers}
+
+<div class="schwarzTransparenterHintergrund"></div>
+<header class="container page-header">
+    <div class="toprow">
+        <div id="logo">
+            <f:link.page pageUid="1" title="Zurück zur Startseite">
+                <f:image src="EXT:sitepackage/Resources/Public/Images/logo.png" width="250" alt="Logo" class="logo"></f:image>
+            </f:link.page>
+        </div>
+        <div class="topmenu">
+            <f:render partial="Page/Topmenu" arguments="{_all}"/>
+        </div>
+    </div>
+	<nav class="navbar navbar-expand-lg" id="nav1">
+		<!-- Toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <f:if condition="{data.onepager} !== 1">
+            	<f:then>
+                    <f:render partial="Page/Mainmenu" arguments="{_all}"/>
+            	</f:then>
+                <f:else>
+                     <f:variable name="anchors" value="{si:anchor(pid: '{f:if(condition: \'{data.opfrom}\', then: \'{data.opfrom}\', else: \'{data.uid}\')}')}"/>
+                        <f:render partial="Page/Anchormenu" arguments="{anchors:anchors}"/>
+                </f:else>
+            </f:if>
+		</div>
+	</nav>
+	<div class="row row-offcanvas row-offcanvas-right">
+		<nav class="navbar sidebar-offcanvas" id="sidebar">
+			<div class="closeToggle navbar-light">
+				<button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="top icon-bar"></span>
+					<span class=" mid icon-bar"></span>
+					<span class="btm icon-bar"></span>
+				</button>
+			</div>
+            <div class="drilldown">
+                <div class="drilldown-container">
+                    <f:render partial="Page/Mobilemenu" arguments="{_all}"/>
+                </div>
+            </div>
+		</nav>
+	</div>
+</header>
+<div class="slider">
+  <f:cObject typoscriptObjectPath="lib.headerslideshow" />
+</div>
+<f:if condition="{currentPid} > '1'">
+    <div class="container">
+        <f:render partial="Page/Breadcrumb" arguments="{_all}"></f:render>
+    </div>
+</f:if>
+<div role="main">
+	<div class="row" id="content">
+        <f:switch expression="{backend_layout}">
+            <f:case value="pagets__Layout2">
+                <f:render section="Layout2"/>
+            </f:case>
+            <f:case value="pagets__Layout3">
+                <f:render section="Layout3"/>
+            </f:case>
+            <f:case value="pagets__Layout4">
+                <f:render section="Layout4"/>
+            </f:case>
+            <f:defaultCase>
+                <f:render section="Layout1"/>
+            </f:defaultCase>
+        </f:switch>
+	</div>
+</div>
+<footer class="pagefooter">
+    <div class="container">
+        <div class="gridelement">
+            <div class="row">
+                <div class="col-md-4 column0">
+                    <h3>Kontakt</h3>
+                    <f:cObject typoscriptObjectPath="lib.renderCE">75</f:cObject>
+                </div>
+                <div class="col-md-4 column1">
+                    <h3>Rechtliches</h3>
+                    <f:render partial="Page/Footermenu" arguments="{_all}"></f:render>
+                </div>
+                <div class="col-md-4 column2">
+                    <f:cObject typoscriptObjectPath="lib.renderCE">78</f:cObject>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="totop"><a href="javascript:jumpToElement('body');">to top</a></div>

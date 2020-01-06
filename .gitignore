@@ -1,0 +1,6 @@
+# Ignore some project stuff
+.project
+.idea
+/.idea/*.xml
+/.idea/vagrant.xml
+vagrant.xml

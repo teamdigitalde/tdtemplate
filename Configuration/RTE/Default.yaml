@@ -1,0 +1,125 @@
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+  - { resource: "EXT:rte_ckeditor_image/Configuration/RTE/Plugin.yaml" }
+
+editor:
+  externalPlugins:
+      youtube: { resource: "EXT:sitepackage/Resources/Public/Plugins/youtube/plugin.js" }
+  config:
+    # Den Parameter 1 immer hochsetzen, wenn sich in der rte.css etwas ändert.
+    contentsCss: "EXT:sitepackage/Resources/Public/Css/rte.css?1"
+    width: "900px"
+    resize_enabled: true
+    resize_dir: 'both'
+    resize_maxWidth: 1200
+    resize_minWidth: 400
+    skin: 'tdskin,/typo3conf/ext/sitepackage/Resources/Public/Skin/tdskin/'
+    stylesSet:
+
+      # Blockstile
+      - { name: "Text: Kleiner", element: "p", attributes: { 'class': 'small' } }
+      - { name: "Text: 125% ", element: "p", attributes: { 'class': 'groesser-125' } }
+      - { name: "Text: 150% ", element: "p", attributes: { 'class': 'groesser-150' } }
+      - { name: "Text: Rot ", element: "p", attributes: { 'class': 'rot' } }
+      - { name: "Text: Grün ", element: "p", attributes: { 'class': 'gruen' } }
+      - { name: "Text: Grau ", element: "p", attributes: { 'class': 'grau' } }
+
+      # Textstile
+      - { name: "Kleiner Text inline", element: "span", attributes: { 'class': 'small' } }
+      - { name: "Text: 125%", element: "span", attributes: { 'class': 'groesser-125' } }
+      - { name: "Text: 150%", element: "span", attributes: { 'class': 'groesser-150' } }
+      - { name: "Text: Rot", element: "span", attributes: { 'class': 'rot' } }
+      - { name: "Text: Grün", element: "span", attributes: { 'class': 'gruen' } }
+      - { name: "Text: Grau", element: "span", attributes: { 'class': 'grau' } }
+      - { name: "Zitat rechts ausgerichtet", element: "blockquote" ,attributes: { 'class': 'blockquote-reverse' }}
+
+    toolbarGroups:
+      - { name: clipboard, groups: [clipboard, undo] }
+      - { name: editing,   groups: [find, selection, spellchecker] }
+      - { name: links }
+      - { name: insert }
+      - { name: tools }
+      - { name: table }
+      - { name: tabletools }
+      - { name: document,  groups: [ mode, document, doctools ] }
+      - { name: others }
+      - "/"
+      - { name: basicstyles, groups: [ basicstyles, align, cleanup ] }
+      - { name: paragraph,   groups: [ list, indent, blocks] }
+      - "/"
+      - { name: styles }
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+
+    #Einstellungen für das Youtube Plugin
+    #youtube_width: '550'
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - Strike
+      - Blockquote
+      - JustifyBlock
+
+buttons:
+  link:
+    url:
+      properties:
+        class:
+          default: 'external-link'
+    page:
+      properties:
+        class:
+          default: 'internal-link'
+    file:
+      properties:
+        class:
+          default: 'download-link'
+    mail:
+      properties:
+        class:
+          default: 'mail-link'
+    properties:
+      class:
+        allowedClasses: 'external-link,download-link,mail-link,internal-link'
+classes:
+  external-link:
+    name: 'Externer Link'
+  internal-link:
+    name: 'Interner Link'
+  downloadLink:
+    name: 'Download Link'
+  mailLink:
+    name: 'E-Mail Link'
+
+classesAnchor:
+  externalLink:
+    class: 'external-link'
+    type: 'url'
+
+  downloadLink:
+    class: 'download-link'
+    type: 'file'
+
+  mailLink:
+    class: 'mail-link'
+    type: 'mail'
+
+  internalLink:
+    class: 'internal-link'
+    type: 'page'
+ 
+# Allow s and u tag
+processing:
+  allowTags:
+    - iframe

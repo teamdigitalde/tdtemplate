@@ -1,0 +1,109 @@
+
+renderingOptions:
+  submitButtonLabel: absenden
+identifier: kontaktformular
+label: Kontaktformular
+type: Form
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Anfrage von der Website'
+      recipientAddress: example@example.com
+      recipientName: 'Example recipientName'
+      senderAddress: '{email}'
+      senderName: '{vname} {nname}'
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: false
+    identifier: EmailToSender
+  -
+    options:
+      pageUid: '11'
+      additionalParameters: ''
+    identifier: Redirect
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: page-1
+    label: Kontaktformular
+    type: Page
+    renderables:
+      -
+        defaultValue: ''
+        identifier: vname
+        label: Vorname
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Vorname
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: nname
+        label: Nachname
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Nachname
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: Straße
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Straße
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: PLZ
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: PLZ
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-3
+        label: Ort
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Ort
+      -
+        defaultValue: ''
+        identifier: email
+        label: Email
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Email address'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: Bemerkung
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+            placeholder: 'Ihre Nachricht an uns'
+        validators:
+          -
+            identifier: NotEmpty

@@ -1,0 +1,10 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowSaveToExtensionPaths: true
+        allowDeleteFromExtensionPaths: true
+        allowedFileMounts:
+          10: 1:/typo3conf/ext/sitepackage/Resources/Public/Yaml/
+        allowedExtensionPaths:
+          10: EXT:sitepackage/Resources/Public/Yaml/
