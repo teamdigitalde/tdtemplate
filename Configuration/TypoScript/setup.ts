@@ -1,6 +1,8 @@
 # Make the PAGE object
 page = PAGE
 page {
+	shortcutIcon = {$custom.images}favicon.ico
+
 	10 = FLUIDTEMPLATE
 	10 {
 		layoutRootPath = EXT:tdtemplate/Resources/Private/Layouts/
