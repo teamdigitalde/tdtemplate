@@ -9,7 +9,7 @@ editor:
       youtube: { resource: "EXT:sitepackage/Resources/Public/Plugins/youtube/plugin.js" }
   config:
     # Den Parameter 1 immer hochsetzen, wenn sich in der rte.css etwas ändert.
-    contentsCss: "EXT:sitepackage/Resources/Public/Css/rte.css?1"
+    contentsCss: "EXT:tdtemplate/Resources/Public/Css/rte.css?1"
     width: "900px"
     resize_enabled: true
     resize_dir: 'both'
@@ -118,7 +118,7 @@ classesAnchor:
   internalLink:
     class: 'internal-link'
     type: 'page'
- 
+
 # Allow s and u tag
 processing:
   allowTags:
