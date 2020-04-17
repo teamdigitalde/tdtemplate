@@ -8,12 +8,12 @@ defined('TYPO3_MODE') || die();
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_sitepackage_domain_model_anchor');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'TeamDigital.tdtemplate',
+    'tdtemplate',
     'Configuration/TypoScript',
     'tdtemplate'
 );
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'TeamDigital.tdtemplate',
+    'tdtemplate',
     'Configuration/TypoScript',
     'tdtemplate'
 );
