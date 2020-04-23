@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+a[href^="javascript:"]:after, a[href^="#"]:after {display: none;}
+
+/* Kopf- und Fußzeile entfernen */
+@page {
+	size: auto;
+	margin: 0mm;
+	}
+
+
+
+

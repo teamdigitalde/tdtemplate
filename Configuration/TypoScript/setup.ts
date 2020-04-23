@@ -112,12 +112,13 @@ page {
 	// includeCSS
 	includeCSS {
 		// Werte ab 1000
-		1000 = {$custom.css}custom.css
+		1010 = {$filepaths.css}print.css
+		2000 = {$custom.css}custom.css
 	}
 
 	includeJSFooter {
 		// Werte ab 1000
-		1000 = {$custom.scripts}custom.js
+		2000 = {$custom.scripts}custom.js
 	}
 }
 
@@ -130,6 +131,11 @@ config {
 	debug = {$config.debug}
 
 	linkVars = L(1-99)
+
+	concatenateCss = 0
+	concatenateJs = 0
+	compressCss = 0
+	compressJs = 0
 }
 
 ## Sprachcondition
