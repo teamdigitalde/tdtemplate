@@ -39,7 +39,7 @@ class UpdateCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $url = "https://github.com/teamdigitalde/sitepackage/archive/master.zip";
+        $url = "https://github.com/teamdigitalde/sitepackage-v10/archive/master.zip";
         $extDir = Environment::getPublicPath().'/typo3conf/ext/';
         $ch = curl_init();
 
@@ -73,7 +73,7 @@ class UpdateCommand extends Command
         }
 
         // Sync sitepackages
-        $test = $this->smartCopy($extDir.'sitepackage-master/',$extDir.'sitepackage/');
+        $test = $this->smartCopy($extDir.'sitepackage-v10-master/',$extDir.'sitepackage/');
         if($test == TRUE) {
 //            \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump('Hat synchonisiert');
         } else {
