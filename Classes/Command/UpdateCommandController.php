@@ -130,9 +130,9 @@ class UpdateCommand extends Command
         } else {
 //            \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump('Der Ordner Sitepackage -> Sites konnte nicht gefunden werden.');
         }
-        if(is_dir($extDir.'sitepackage-master')) {
+        if(is_dir($extDir.'sitepackage-v10-master')) {
 //            \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump('Lösche den Ordner Sitepackage -> Sitepackage-Master');
-            $this->rrmdir($extDir.'sitepackage-master');
+            $this->rrmdir($extDir.'sitepackage-v10-master');
         } else {
 //            \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump('Der Ordner Sitepackage-Master konnte nicht gefunden werden.');
         }
